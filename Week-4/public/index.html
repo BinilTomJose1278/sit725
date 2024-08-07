@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Deakin Software Club</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="sass.html"> Home</a></li>
+          <li><a href="badges.html">About Us</a></li>
+          <li><a href="collapsible.html">Our Events</a></li>
+          <li><a href="membership.html">Membership</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <h3>Deakin Software Club - Member Registration</h3>
+      <form id="registrationForm">
+          <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="form-group">
+              <label for="country">Country</label>
+              <input type="text" class="form-control" id="country" required>
+          </div>
+          <div class="form-group">
+            <label for="enrolledCourse">Enrolled Course</label>
+            <input type="text" class="form-control" id="enrolledCourse" required>
+        </div>
+          <div class="form-group">
+              <label for="studentId">Student ID</label>
+              <input type="text" class="form-control" id="studentId" required>
+          </div>
+          <div class="form-group">
+              <label for="about">What do you like about the club?</label>
+              <textarea class="form-control" id="about" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div id="responseMessage" class="mt-3"></div>
+
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>
