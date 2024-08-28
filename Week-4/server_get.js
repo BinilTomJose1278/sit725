@@ -5,7 +5,9 @@ const path = require("path");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const mongoose = require("mongoose");
-const Registration = require("./models/Registration");
+
+// Import the controller function
+const { registerUser } = require("./controllers/registrationController");
 
 const app = express();
 const port = 3040;
@@ -41,27 +43,8 @@ app.use(
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.post("/api/register", async (req, res) => {
-  const { name, country, studentId, about } = req.body;
-
-  try {
-    const registration = new Registration({
-      name,
-      country,
-      studentId,
-      about,
-    });
-
-    await registration.save();
-    console.log(
-      `Received registration: Name=${name}, Country=${country},  Student ID=${studentId}, About=${about}`
-    );
-    res.json({ message: "Registration successful!" });
-  } catch (error) {
-    console.error("Error saving registration:", error);
-    res.status(500).json({ message: "Registration failed!" });
-  }
-});
+// Use the controller function to handle the POST request
+app.post("/api/register", registerUser);
 
 app.listen(port, () => {
   console.log("Listening on port " + port);
